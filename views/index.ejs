@@ -1,0 +1,54 @@
+<%- include('includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <main>
+        <div class="content">
+            <form action="/" method="POST">
+                <select name="country">
+                    <option value="estonia">Estonia</option>
+                    <option value="latvia">Latvia</option>
+                    <option value="lithuania">Lithuania</option>
+                </select>
+                <button type="submit">Data</button>
+            </form>
+    
+            <% if (data.name) { %>
+    
+            <div class="answer">
+    
+                <h1><%= data.name %></h1>
+    
+                <ul>
+    
+                    <li><span>Name:</span><%= data.name %></li>
+                    <li><span>Top Level Domain:</span><%= data.topLevelDomain %></li>
+                    <li><span>Calling Code:</span><%= data.callingCodes %></li>
+                    <li><span>Capital:</span> <%= data.capital %></li>
+                    <li><span>Region:</span> <%= data.region %></li>
+                    <li><span>Subregion:</span> <%= data.subregion %></li>
+                    <li><span>Population:</span> <%= data.population %></li>
+                    <li><span>Timezone:</span> <%= data.timezones %></li>
+                    <li><span>Language in English:</span> <%= data.demonym %></li>
+                    <li><span>Currency code:</span> <%= data.currencies[0].code %></li>
+                    <li><span>Currency name:</span> <%= data.currencies[0].name %></li>
+                    <li><span>Currency symbol:</span><%= data.currencies[0].symbol %></li>
+    
+                </ul>
+    
+    
+    
+                <img src='<%- data.flag %>' alt="Flag">
+    
+            </div>
+    
+            <% } %>
+        </div>
+
+
+
+
+
+    </main>
+<%- include('includes/end.ejs') %>

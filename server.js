@@ -4,7 +4,7 @@ const app = express();
 const axios = require("axios");
 const path = require("path");
 
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set('view engine', 'ejs');
